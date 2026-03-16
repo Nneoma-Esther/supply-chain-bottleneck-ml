@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, classification_report
 
 from preprocess import preprocess
 
@@ -23,3 +23,5 @@ predictions = model.predict(X_test)
 score = f1_score(y_test, predictions)
 
 print("F1 score:", score)
+print("\nClassification Report:")
+print(classification_report(y_test, predictions))
